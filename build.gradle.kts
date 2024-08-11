@@ -1,9 +1,10 @@
 plugins {
     id("java-library")
+    id("application")
 }
 
 group = "net.minecraft"
-version = "rd-161807"
+version = "0.0.3A-pubtestfacesneww"
 
 repositories {
     mavenCentral()
@@ -23,7 +24,7 @@ dependencies {
 }
 
 
-task("run", JavaExec::class) {
+task("runb", JavaExec::class) {
     jvmArgs = listOf("-Dorg.lwjgl.librarypath=${project.projectDir.toPath()}\\run\\natives")
     main = "com.mojang.minecraft.Minecraft"
     classpath = sourceSets["main"].runtimeClasspath
@@ -35,4 +36,8 @@ task("extractNatives", Copy::class) {
     dependsOn(natives)
     from(natives.map { zipTree(it) })
     into("${project.projectDir.toPath()}\\run\\natives")
+}
+
+application {
+    mainClassName = "com.mojang.minecraft.Minecraft"
 }
