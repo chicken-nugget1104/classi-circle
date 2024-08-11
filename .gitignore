@@ -3,6 +3,9 @@
 # Compiled class file
 *.class
 
+# this THING
+.hprof
+
 # Log file
 *.log
 
@@ -20,6 +23,7 @@
 *.zip
 *.tar.gz
 *.rar
+!libs/*.jar
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -67,8 +71,6 @@ hs_err_pid*
 # auto-import.
 # .idea/artifacts
 # .idea/compiler.xml
-.idea/modules.xml
-.idea/*.iml
 # .idea/modules
 # *.iml
 # *.ipr
@@ -106,7 +108,6 @@ crashlytics-build.properties
 .idea/caches/build_file_checksums.ser
 
 ### Gradle template
-.gradle
 /**/build/
 
 # Ignore Gradle GUI config
